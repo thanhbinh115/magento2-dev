@@ -125,6 +125,7 @@ return [
         'Dotdigitalgroup_Email' => 1,
         'Magento_WishlistAnalytics' => 1,
         'Sai_Customization' => 1,
+        'Sai_Product' => 1,
         'SendGrid_EmailDeliverySimplified' => 1,
         'Temando_Shipping' => 1,
         'Vertex_Tax' => 1

@@ -1,2 +1,5 @@
 <h1><?php echo $this->getProductList() ?></h1>
 <p><?php echo $this->getVariableValue() ?></p>
+
+<p><?php echo $this->getHelperData()->getJeanTrousersConfig('enable').' '.$this->getHelperData()->getJeanTrousersConfig('display_text') ?></p>
+<p><?php echo $this->getHelperData()->getJeanShirtConfig('enable').' '.$this->getHelperData()->getJeanShirtConfig('display_text') ?></p>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <customization>
+            <jean_trousers>
+                <enable>1</enable>
+                <display_text>Customization Jean Trousers label</display_text>
+            </jean_trousers>
+            <jean_shirt>
+                <enable>1</enable>
+                <display_text>Customization Jean Shirt label</display_text>
+            </jean_shirt>
+        </customization>
+    </default>
+</config>

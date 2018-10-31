@@ -15,12 +15,17 @@ class Customization extends \Magento\Framework\View\Element\Template
 {
     protected $_variableFactory;
 
+    protected $_helperData;
+
     public function __construct(
         Context $context,
         array $data = [],
-        \Magento\Variable\Model\VariableFactory $variableFactory)
+        \Magento\Variable\Model\VariableFactory $variableFactory,
+        \Sai\Customization\Helper\Data $helperData
+    )
     {
         $this->_variableFactory = $variableFactory;
+        $this->_helperData = $helperData;
         parent::__construct($context, $data);
     }
 
@@ -28,10 +33,24 @@ class Customization extends \Magento\Framework\View\Element\Template
         return 'Product list';
     }
 
+    /**
+     * Get 'Custom variable' from admin
+     *
+     * @return string
+     */
     public function getVariableValue() {
         $var = $this->_variableFactory->create();
         $var->loadByCode('dev_name');
 
         return $var->getValue('text');
+    }
+
+    /**
+     * Get helper data
+     *
+     * @return mixed
+     */
+    public function getHelperData() {
+        return $this->_helperData;
     }
 }
