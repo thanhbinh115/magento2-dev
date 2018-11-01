@@ -13,6 +13,16 @@ use Magento\Framework\Data\Tree\Node;
 use Magento\Framework\Event\ObserverInterface;
 
 class Topmenu implements ObserverInterface {
+
+    protected $_request;
+
+    public function __construct(
+        \Magento\Framework\App\Request\Http $request
+    )
+    {
+        $this->_request = $request;
+    }
+
     /**
      * @param EventObserver $observer
      *
@@ -20,7 +30,13 @@ class Topmenu implements ObserverInterface {
      */
     public function execute(EventObserver $observer) {
         $urlInterface = \Magento\Framework\App\ObjectManager::getInstance()->get('Magento\Framework\UrlInterface');
-        $active = strpos($urlInterface->getCurrentUrl(), 'customization');
+        $route  = $this->_request->getRouteName();
+        $active = false; //strpos($route, 'customization');
+
+        //check active route
+        if ($route == 'customization') {
+            $active = true;
+        }
 
         /**
          * @var \Magento\Framework\Data\Tree\Node $menu
@@ -38,6 +54,5 @@ class Topmenu implements ObserverInterface {
         $menu->addChild($node);
 
         return $this;
-
     }
 }

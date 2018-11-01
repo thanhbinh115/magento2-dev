@@ -2,15 +2,15 @@
 /**
  * Created by PhpStorm.
  * User: thanhbinh
- * Date: 2018/10/29
- * Time: 2:32 PM
+ * Date: 2018/10/31
+ * Time: 3:22 PM
  */
 
-namespace Sai\Customization\Block;
+namespace Sai\MyCustomization\Block;
 
 use Magento\Framework\View\Element\Template\Context;
 
-class Customization extends \Magento\Framework\View\Element\Template
+class MyCustomization extends \Magento\Framework\View\Element\Template
 {
     protected $_variableFactory;
 
@@ -28,8 +28,8 @@ class Customization extends \Magento\Framework\View\Element\Template
         parent::__construct($context, $data);
     }
 
-    public function getProductList(){
-        return 'Product list';
+    public function getCustomizationList(){
+        return 'Customization list';
     }
 
     /**
