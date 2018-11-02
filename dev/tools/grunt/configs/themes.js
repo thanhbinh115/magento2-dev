@@ -50,5 +50,16 @@ module.exports = {
             'css/styles'
         ],
         dsl: 'less'
+    },
+    sai: {
+        area: 'frontend',
+        name: 'Sai/standard',
+        locale: 'en_US',
+        files: [
+            'css/styles-m',
+            'css/styles-l',
+            /*'css/source/_theme'*/
+        ],
+        dsl: 'less'
     }
 };
